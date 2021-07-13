@@ -23,23 +23,10 @@ app.use((req, res, next) => { res.status.apply(status.INTERNAL_SERVER_ERROR).jso
 
 //o false faz com que os dados nao desapareçam quando sincroniza
 sequelize.sync({ force: false }).then(() => {
-  const port = 3003;
-  app.set("port", port);
-  const server = http.createServer(app);
-  server.listen(port)
+    const port = 3003;
+    app.set("port", port);
+    const server = http.createServer(app);
+    server.listen(port)
 })
 
-
-// tentativa de rodar no umbler
-// const mysql = require('mysql2');
-// const connection = mysql.createConnection({
-//   host: 'mysql742.umbler.com',
-//   port: 41890,
-//   user: 'global123',
-//   password: 'admin123',
-//   database: 'avglobal'
-// });
-// connection.connect((err) => {
-//   if (err) throw err;
-//   console.log('Connected!');
-// });
+app.listen(process.env.PORT || 3000)
