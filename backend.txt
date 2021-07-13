@@ -1,0 +1,101 @@
+1. entra na pasta do projeto pelo prompt:
+
+npm init
+
+(da um monte de enter e yes no final)
+(vai criar a package.json)
+
+
+2. no prompt:
+
+yarn add express
+yarn add http-status
+yarn add mysql2
+yarn add sequelize
+yarn add cors
+
+(confere as dependencias no arquivo json:
+"dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-status": "^1.5.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+
+e ve se esta instalado o node modules)
+
+
+3. cria o banco no mysql (nao precisa criar a tabela):
+aperta New
+depois a aba SQL e escreve:
+
+create database global
+
+aperta executar
+
+(aperta o atualizar/setinha verde no menu phpMyAdmin e confere se o banco servicos está la)
+
+
+4. no promp:
+node index.js 
+
+(vai mostrar um monte de texto e termina com "Executing (default): SHOW INDEX FROM ........"
+(olhando no mysql vao surgir as tabelas dentro de global)
+
+
+
+
+
+
+
+
+
+//isso so precisa fazer se for colocar no insomnia:
+
+comandos Time
+
+post json timeInserir
+http://localhost:3003/globalhitss/inserirTime
+{
+	"nome": "Tapete"
+}
+
+get timeMostrar
+http://localhost:3003/globalhitss/times
+
+put json timeEditar
+http://localhost:3003/globalhitss/editarTime/X
+{
+	"nome": "Pukachu"
+}
+
+put timeDeletar
+http://localhost:3003/globalhitss/deletarTime/X
+(nao aparece nada, tem que conferir no get)
+
+
+post json insertUsuario
+http://localhost:3003/globalhitss/inserirUsuario
+{
+	"nome": "",
+	"login": "",
+	"senha": "",
+	"gestor": true,
+	"idTime": 1
+}
+
+get usuarios
+http://localhost:3003/globalhitss/usuarios
+
+put json usuarioEditar
+http://localhost:3003/globalhitss/editarUsuario/X
+{
+	"nome": "",
+	"login": "",
+	"senha": "",
+	"gestor": true,
+	"idTime": 1
+}
+
+http://localhost:3003/globalhitss/deletarUsuario/X
+
