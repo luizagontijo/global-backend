@@ -194,7 +194,7 @@ exports.SearchOneFormsTimes = (req, res, next) => {
 
 exports.ContagemTimes = async(req, res, next) => {
     try {
-        const [response] = await sequelize.query('SELECT count(id) AS count FROM `times`')
+        const [response] = await sequelize.query('SELECT count(id) AS count FROM times')
         res.status(status.OK).send(response[0]);
     } catch (error) {
         next(error)
